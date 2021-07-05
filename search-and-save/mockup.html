@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search&Save mock up</title>
+    <style>
+        * {
+            /* font-weight: bolder; */
+            color: goldenrod; 
+            text-shadow: 1px 1px 2px maroon; 
+        }
+        .header-container-main-nav {
+            display: flex; 
+            justify-content: left; 
+            align-items: baseline;
+            padding: 5px;
+         }
+        .head-p {
+            margin: 10px;
+            text-shadow: 1px 1px 2px maroon;  
+        }
+        .header-container {
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            flex-direction: column;
+            /* border: solid 2px black;  */
+            border: double 2px lightgray; 
+            /* box-shadow: inset 0 0 10px;   */
+            margin: 10px;
+            box-shadow: 5px 5px 10px;
+            /* background-image: url("./images/annie-spratt-lIWF2uHxs0Q-unsplash.jpg"); 
+          background-repeat: no-repeat; 
+          background-position: center; 
+          background-size: cover;   */
+        }
+        .header-title {
+            font-size: 52px; 
+            text-shadow: 1px 1px 2px maroon; 
+            box-shadow: 5px 5px 10px;
+            padding: 5px;
+            color: goldenrod;   
+        }
+        .header-subtitle {
+            text-shadow: 1px 1px 2px maroon;
+            color: goldenrod;  
+        }
+        .search-container, 
+        .search-result-container, 
+        .save-result-container, 
+        .book-search-form-container {
+            /* border: solid 2px black;  */
+            border: double 2px lightgray; 
+            /* box-shadow: inset 0 0 10px;  */
+            display: flex; 
+            justify-content: center; 
+            flex-direction: column;
+            margin: 10px; 
+            box-shadow: 5px 5px 10px;
+            
+        }
+        .header-search, 
+        .header-search-title, 
+        .book-search-form-input, 
+        .header-search-result, 
+        .search-result-title, 
+        .search-result-desc, 
+        .search-result-author, 
+        .header-save-result, 
+        .save-result-title, 
+        .save-result-desc, 
+        .save-result-author {
+            /* display: flex;    */
+            margin: 10px; 
+            padding: 10px;  
+        }
+        .b-s-btn {
+            /* display: flex;  */
+        }
+        .display-search-result-container, 
+        .display-save-result-container, 
+        .book-search-form-container {
+            /* display: flex;  */
+            /* border: solid 2px black;  */
+            border: double 2px lightgray; 
+            margin: 10px;
+            /* box-shadow: inset 0 0 10px;   */
+            box-shadow: 5px 5px 10px; 
+        }
+        /* on-hold for optimization tests */
+        /* body {
+            background-image: url("./images/annie-spratt-lIWF2uHxs0Q-unsplash.jpg"); 
+          background-repeat: no-repeat; 
+          background-position: center; 
+          background-size: cover;  
+        } */
+    </style>
+</head>
+<body>
+    <!-- NAV & PAGE HEADER  -->
+    <div className="header-container-main-nav" class="header-container-main-nav">
+        <p class="head-p">Google Books</p>
+        <p class="head-p">Search</p>
+        <p class="head-p">Save</p>
+    </div>
+
+    <div className="header-container" class="header-container">
+        <h1 className="header-title" class="header-title">SEARCH & SAVE</h1>
+        <h2 className="header-subtitle" class="header-subtitle">SEARCH for & SAVE books of interest</h2>
+    </div> 
+<!-- SEARCH  -->
+    <div className="search-container" class="search-container">
+        <p className="header-search" class="header-search">Book Search</p>
+        <div className="book-search-form-container" class="book-search-form-container">
+        <p className="header-search-title" class="header-search-title">Book</p>
+        <form className="book-search-form" class="book-search-form">
+            <label htmlfor="book-search-form-input" for= "book-search-form-input" className="book-search-form-input" class="book-search-form-input">Book</label>
+            <input className="b-s-input" class="b-s-input" placeholder="Harry Potter" />
+            <button className="b-s-btn" class="b-s-btn" type="submit">Search</button>
+        </form>
+        </div>
+    </div>
+<!-- RESULT this may be a resusable component -->
+    <div className="search-result-container" class="search-result-container">
+        <p className="header-search-result" class="header-search-result">Result</p>
+        <!-- map and forEach -->
+        <div className="display-search-result-container" class="display-search-result-container">
+            <p className="search-result-title" class="search-result-title">Title Goes Here?Link</p>
+            <!-- view-btn is reusable component -->
+            <button className="view-btn" class="view-btn" type="submit">View</button>
+            <button className="save-btn" class="save-btn" type="submit">Save</button>
+            <p className="search-result-desc" class="search-result-desc">A brief description of the returned result</p>
+            <p className="search-result-author" class="search-result-author">Written by: a great person</p>
+            <div className="search-result-img-link" class="search-result-img-link"><img/></div>
+        </div>
+    </div>
+<!-- SAVE -->
+<!-- RESULT -->
+<div className="save-result-container" class="save-result-container">
+    <p className="header-save-result" class="header-save-result">Result</p>
+    <!-- map and forEach -->
+    <div className="display-save-result-container" class="display-save-result-container">
+        <p className="save-result-title" class="save-result-title">Title Goes Here?Link</p>
+        <!-- view button is reusable component -->
+        <button className="view-btn" class="view-btn" type="submit">View</button>
+        <button className="del-btn" class="del-btn" type="submit">Delete</button>
+        <p className="save-result-desc" class="save-result-desc">A brief description of the returned result</p>
+        <p className="save-result-author" class="save-result-author">Written by: a great person</p>
+        <div className="save-result-img-link" class="save-result-img-link"><img/></div>
+    </div>
+</div>
+    
+</body>
+</html>
