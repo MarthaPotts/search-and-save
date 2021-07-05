@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 import { Link, useParams } from 'react-router-dom';
-import { Col, Row } from '../components/Grid';
+import { Col, Row, Container} from '../components/Grid';
 import Jumbotron from '../components/Jumbotron';
 import API from '../utils/API'; 
 
 function Detail(props) {
-    const [book, setBook] = useState( {} ); 
+    const [book, setBook] = useState({}); 
     //when this comp mounts, grab book with _id of props.match.params.id 
     const {id} = useParams(); 
     useEffect( () => {
-        API.getBook(id).then( res => setBook(res.data)).catch(err => console.log(err)); 
-    }, []); 
+        API.getBook(id)
+        .then(res => setBook(res.data))
+        .catch(err => console.log(err)); 
+    },[]); 
 
     return(
         <Container fluid>
@@ -35,7 +37,7 @@ function Detail(props) {
             </Row>
             <Row>
                 <Col size="md-2">
-                    <Link to="/">>← Back to Authors</Link>
+                    <Link to="/">← Back to Authors</Link>
                 </Col>
             </Row>
         </Container>

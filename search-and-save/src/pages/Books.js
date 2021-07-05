@@ -10,11 +10,12 @@ function Books() {
     //set initial state 
     const [books, setBooks] = useState([]); 
     const [formObject, setFormObject] = useState({
-        authors: "", 
-        description: "", 
-        image: "", 
-        link: "", 
-        title: "", 
+        // authors: "", 
+        // description: "", 
+        // image: "", 
+        // link: "", 
+        title: "",
+        author: "",  
         synopsis: ""
     }); 
     //load all books and store them with setBooks
@@ -39,19 +40,21 @@ function Books() {
         event.preventDefault(); 
         if (formObject.title && formObject.author) {
             API.saveBook({
+                // authors: formObject.author, 
+                // description: formObject.description, 
+                // image: formObject.image, 
+                // link: formObject.link, 
+                title: formObject.title,
                 author: formObject.author, 
-                description: formObject.description, 
-                image: formObject.image, 
-                link: formObject.link, 
-                title: formObject.title, 
                 synopsis: formObject.synopsis
             })
             .then( () => setFormObject({
+                // authors: "", 
+                // description: "", 
+                // image: "", 
+                // link: "", 
+                title: "",
                 author: "", 
-                description: "", 
-                image: "", 
-                link: "", 
-                title: "", 
                 synopsis: ""
             }))
             .then( () => loadBooks())
